@@ -20,18 +20,6 @@ const StyledTextField = styled(TextField)(({ theme }) => ({
     borderRadius: 4,
     fontSize: 16,
     width: "auto",
-    fontFamily: [
-      "-apple-system",
-      "BlinkMacSystemFont",
-      '"Segoe UI"',
-      "Roboto",
-      '"Helvetica Neue"',
-      "Arial",
-      "sans-serif",
-      '"Apple Color Emoji"',
-      '"Segoe UI Emoji"',
-      '"Segoe UI Symbol"',
-    ].join(","),
     "&:focus": {
       borderColor: theme.palette.primary.main,
     },
