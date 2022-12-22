@@ -1,26 +1,23 @@
 import React from "react";
-import "./App.css";
-import { Box, Container, Grid, useTheme } from "@mui/material";
+import { Routes, Route } from "react-router-dom";
+
+import { Container, Grid } from "@mui/material";
 import Header from "./components/Header";
+import { HomePage } from "./pages/HomePage";
+import { NotFound } from "./pages/NotFound";
+import Details from "./pages/Details";
 
 function App() {
-  const theme = useTheme();
   return (
     <Grid container spacing={2}>
-      <Grid
-        item
-        xs={12}
-        sx={{
-          backgroundColor: theme.palette.primary.main,
-        }}
-      >
-        <Container maxWidth="xl">
-          <Header />
-        </Container>
-      </Grid>
+      <Header />
       <Grid item xs={12}>
         <Container maxWidth="xl">
-          <Box>Content</Box>
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/country/:name" element={<Details />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
         </Container>
       </Grid>
     </Grid>
